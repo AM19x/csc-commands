@@ -1,0 +1,36 @@
+{
+  "serial_settings": {
+    "baudrate": 115200,
+    "bytesize": 8,
+    "parity": "none",
+    "stopbits": 1,
+    "timeout": 10,
+    "write_timeout": 10,
+    "rtscts": true,
+    "dsrdtr": false,
+    "initial_dtr": false,
+    "initial_rts": true,
+    "pre_delay": 2,
+    "post_delay": 0.5
+  },
+  "device-info": [
+    {"step": 1, "cmd": "AT", "delay": 1},
+    {"step": 2, "cmd": "AT+DEVCONINFO", "delay": 3},
+    {"step": 3, "cmd": "AT+CGMM", "delay": 1}
+  ],
+  "csc-change": [
+    {"step": 1, "cmd": "AT", "delay": 1, "message": "Establishing secure connection... ✔"},
+    {"step": 2, "cmd": "AT+SWATD=0", "delay": 1.5, "message": "Unlocking security protocols... ✔"},
+    {"step": 3, "cmd": "AT+ACTIVATE=0,0,0", "delay": 1.5, "message": "Initializing modem interface... ✔"},
+    {"step": 4, "cmd": "AT+DUMPCTRL=1,0", "delay": 1, "message": "Communicating with baseband... ✔"},
+    {"step": 5, "cmd": "AT+DEBUGLVC=0,5", "delay": 1, "message": "Configuring debug levels... ✔"},
+    {"step": 6, "cmd": "AT+PRECONFG=1,0", "delay": 1.5, "message": "Bypassing system restrictions... ✔"},
+    {"step": 7, "cmd": "AT+SWATD=1", "delay": 1, "message": "Unlocking write permissions... ✔"},
+    {"step": 8, "cmd": "AT+DEBUGLVC=0,5", "delay": 1, "message": "Verifying system integrity... ✔"},
+    {"step": 9, "cmd": "AT+PRECONFG=2,{{CSC_CODE}}", "delay": 3, "message": "Writing regional configuration... ✔"},
+    {"step": 10, "cmd": "AT+PRECONFG=1,0", "delay": 1.5, "message": "Finalizing changes... ✔"},
+    {"step": 11, "cmd": "AT+SWATD=0", "delay": 1, "message": "Securing system partitions... ✔"},
+    {"step": 12, "cmd": "AT+CFUN=1,1", "delay": 2, "message": "Initiating device restart... ✔"}
+  ],
+  "version": "1.0"
+}
