@@ -1,16 +1,16 @@
 {
   "serial_settings": {
-    "baudrate": 115200,
+    "baudrate": 9600,
     "bytesize": 8,
     "parity": "none",
     "stopbits": 1,
-    "timeout": 10,
-    "write_timeout": 10,
+    "timeout": 15,
+    "write_timeout": 15,
     "rtscts": true,
     "dsrdtr": false,
     "initial_dtr": false,
     "initial_rts": true,
-    "pre_delay": 2,
+    "pre_delay": 1,
     "post_delay": 0.5
   },
   "device-info": [
@@ -27,10 +27,10 @@
     {"step": 6, "cmd": "AT+PRECONFG=1,0", "delay": 1.5, "message": "Bypassing system restrictions... ✔"},
     {"step": 7, "cmd": "AT+SWATD=1", "delay": 1, "message": "Unlocking write permissions... ✔"},
     {"step": 8, "cmd": "AT+DEBUGLVC=0,5", "delay": 1, "message": "Verifying system integrity... ✔"},
-    {"step": 9, "cmd": "AT+PRECONFG=2,{{CSC_CODE}}", "delay": 3, "message": "Writing regional configuration... ✔"},
+    {"step": 9, "cmd": "AT+PRECONFG=2,{{CSC_CODE}}", "delay": 4, "message": "Writing regional configuration... ✔"},
     {"step": 10, "cmd": "AT+PRECONFG=1,0", "delay": 1.5, "message": "Finalizing changes... ✔"},
     {"step": 11, "cmd": "AT+SWATD=0", "delay": 1, "message": "Securing system partitions... ✔"},
-    {"step": 12, "cmd": "AT+CFUN=1,1", "delay": 2, "message": "Initiating device restart... ✔"}
+    {"step": 12, "cmd": "AT+CFUN=1,1", "delay": 3, "message": "Initiating device restart... ✔"}
   ],
-  "version": "1.0"
+  "version": "2.12.112025"
 }
