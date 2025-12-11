@@ -1,11 +1,13 @@
 {
-  "latest_version": "2.0.0",
+  "latest_version": "2.12.112025",
   "download_url": "https://gsm6.com/samsung-csc-changer-guide/",
   "whats_new": [
     "Reduced application load time by 40%",
     "Added backup server support for improved stability", 
     "Enhanced device information reading capabilities",
     "Fixed various bugs and performance issues"
+    "added support Android 16"
+    "now support One UI 8 & newer"
   ],
-  "release_date": "2025-11-20"
+  "release_date": "2025-12-11"
 }
